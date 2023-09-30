@@ -25,3 +25,8 @@
 #include "elogger.hpp"
 
 #include <string>
+
+elogger::LogPacket::LogPacket(const elogger::LogLevel& logLevel, const std::string& message) :
+    _logLevel { logLevel },
+    _message { message }
+{ }
