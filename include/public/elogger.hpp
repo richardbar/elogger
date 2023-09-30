@@ -26,4 +26,8 @@
 
 #ifdef __cplusplus
 
+namespace elogger
+{
+}
+
 #endif
