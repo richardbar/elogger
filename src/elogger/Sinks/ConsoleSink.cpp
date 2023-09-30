@@ -24,6 +24,8 @@
 
 #include "elogger.hpp"
 
+#include <iostream>
+
 bool elogger::Sinks::ConsoleSink::Handle(const elogger::LogPacket& logPacket) const
 {
 
