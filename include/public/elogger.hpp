@@ -59,12 +59,14 @@ namespace elogger
     {
         private:
             const elogger::LogLevel _logLevel;
+            const std::string _message;
         
         public:
             LogPacket() = delete;
-            explicit LogPacket(const elogger::LogLevel& logLevel);
+            explicit LogPacket(const elogger::LogLevel& logLevel, const std::string& message);
 
             [[nodiscard]] const elogger::LogLevel& GetLogLevel() const noexcept;
+            [[nodiscard]] const std::string& GetMessage() const noexcept;
 
     };
 }
