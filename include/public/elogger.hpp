@@ -92,9 +92,12 @@ namespace elogger
             class ConsoleSinkConfigurations
             {
                 private:
+                    bool _color = false;
 
                 public:
+                    ConsoleSinkConfigurations& SetColour(bool value) noexcept;
 
+                    [[nodiscard]] bool GetColor() const noexcept;
             };
         }
 

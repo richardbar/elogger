@@ -23,3 +23,15 @@
  */
 
 #include "elogger.hpp"
+
+elogger::Sinks::Configuations::ConsoleSinkConfigurations& elogger::Sinks::Configuations::ConsoleSinkConfigurations::SetColour(bool value) noexcept
+{
+    this->_color = value;
+
+    return *this;
+}
+
+bool elogger::Sinks::Configuations::ConsoleSinkConfigurations::GetColor() const noexcept
+{
+    return this->_color;
+}
