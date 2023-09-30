@@ -55,6 +55,10 @@ namespace elogger
      */
     [[nodiscard]] extern std::string LogLevelToString(const elogger::LogLevel& logLevel) noexcept;
 
+    /**
+     * @brief LogPacket houses all the necessary data used by sinks to generate logs. 
+     * 
+     */
     class LogPacket
     {
         private:
@@ -65,7 +69,18 @@ namespace elogger
             LogPacket() = delete;
             explicit LogPacket(const elogger::LogLevel& logLevel, const std::string& message);
 
+            /**
+             * @brief Get the Log Level object.
+             * 
+             * @return const elogger::LogLevel& The return value.
+             */
             [[nodiscard]] const elogger::LogLevel& GetLogLevel() const noexcept;
+
+            /**
+             * @brief Get the Message object.
+             * 
+             * @return const std::string& The return value.
+             */
             [[nodiscard]] const std::string& GetMessage() const noexcept;
 
     };
