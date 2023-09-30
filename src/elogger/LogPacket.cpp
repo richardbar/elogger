@@ -23,3 +23,5 @@
  */
 
 #include "elogger.hpp"
+
+#include <string>
