@@ -27,6 +27,7 @@
 #ifdef __cplusplus
 
 #include <cstdint>
+#include <string>
 namespace elogger
 {
     /**
