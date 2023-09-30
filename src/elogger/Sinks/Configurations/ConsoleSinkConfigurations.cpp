@@ -31,7 +31,19 @@ elogger::Sinks::Configuations::ConsoleSinkConfigurations& elogger::Sinks::Config
     return *this;
 }
 
+elogger::Sinks::Configuations::ConsoleSinkConfigurations& elogger::Sinks::Configuations::ConsoleSinkConfigurations::SetIncludeTime(bool value) noexcept
+{
+    this->_includeTime = value;
+
+    return *this;
+}
+
 bool elogger::Sinks::Configuations::ConsoleSinkConfigurations::GetColor() const noexcept
 {
     return this->_color;
+}
+
+bool elogger::Sinks::Configuations::ConsoleSinkConfigurations::GetIncludeTime() const noexcept
+{
+    return this->_includeTime;
 }
