@@ -30,3 +30,8 @@ elogger::LogPacket::LogPacket(const elogger::LogLevel& logLevel, const std::stri
     _logLevel { logLevel },
     _message { message }
 { }
+
+const elogger::LogLevel& elogger::LogPacket::GetLogLevel() const noexcept
+{
+    return this->_logLevel;
+}
