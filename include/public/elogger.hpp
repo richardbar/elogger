@@ -84,6 +84,10 @@ namespace elogger
             [[nodiscard]] const std::string& GetMessage() const noexcept;
 
     };
+
+    namespace Sinks
+    {
+    }
 }
 
 #endif
