@@ -29,6 +29,19 @@
 #include <cstdint>
 namespace elogger
 {
+    /**
+     * @brief LogLevel is an enum used to describe the severity of a log
+     * 
+     */
+    enum class LogLevel : uint8_t
+    {
+        Verbose = 0, /*!< Verbose logging is used to output as much information about events. */
+        Debug = 1, /*!< Debugging logging is used to output information that is usefull for debug pursposes. */
+        Information = 2, /*!< Information logging is used to provide information about the state of the process. */
+        Warning = 3, /*!< Warning logging is used to inform about small errors with a low priority. */
+        Error = 4, /*!< Error logging is used to output errors that are top priority. */
+        Fatal = 5 /*!< Fatal logging is used to output errors that led the program to a fatal state. */
+    };
 }
 
 #endif
