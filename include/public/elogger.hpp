@@ -89,7 +89,13 @@ namespace elogger
     {
         namespace Configuations
         {
+            class ConsoleSinkConfigurations
+            {
+                private:
 
+                public:
+
+            };
         }
 
         class ISink
