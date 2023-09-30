@@ -54,6 +54,16 @@ namespace elogger
      * @return std::string The stringified elogger::LogLevel.
      */
     [[nodiscard]] extern std::string LogLevelToString(const elogger::LogLevel& logLevel) noexcept;
+
+    class LogPacket
+    {
+        private:
+        
+        public:
+            LogPacket() = delete;
+            explicit LogPacket();
+
+    };
 }
 
 #endif
