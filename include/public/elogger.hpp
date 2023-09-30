@@ -33,6 +33,7 @@ namespace elogger
     /**
      * @brief LogLevel is an enum used to describe the severity of a log
      * 
+     * @see std::string LogLevelToString(const elogger::LogLevel& logLevel)
      */
     enum class LogLevel : uint8_t
     {
@@ -43,6 +44,16 @@ namespace elogger
         Error = 4, /*!< Error logging is used to output errors that are top priority. */
         Fatal = 5 /*!< Fatal logging is used to output errors that led the program to a fatal state. */
     };
+
+    /**
+     * @brief LogLevelToString stringifies the elogger::LogLevel enum.
+     * 
+     * @see enum elogger::LogLevel
+     * 
+     * @param logLevel The elogger::LogLevel to stringify.
+     * @return std::string The stringified elogger::LogLevel.
+     */
+    [[nodiscard]] extern std::string LogLevelToString(const elogger::LogLevel& logLevel) noexcept;
 }
 
 #endif
