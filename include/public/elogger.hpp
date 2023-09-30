@@ -58,10 +58,13 @@ namespace elogger
     class LogPacket
     {
         private:
+            const elogger::LogLevel _logLevel;
         
         public:
             LogPacket() = delete;
-            explicit LogPacket();
+            explicit LogPacket(const elogger::LogLevel& logLevel);
+
+            [[nodiscard]] const elogger::LogLevel& GetLogLevel() const noexcept;
 
     };
 }
