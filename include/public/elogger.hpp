@@ -115,8 +115,12 @@ namespace elogger
         class ConsoleSink : public elogger::Sinks::ISink
         {
             private:
+                elogger::Sinks::Configuations::ConsoleSinkConfigurations _configuration;
 
             public:
+                ConsoleSink() = default;
+                explicit ConsoleSink(const elogger::Sinks::Configuations::ConsoleSinkConfigurations& configuations);
+
                 [[nodiscard]] bool Handle(const elogger::LogPacket& logPacket) const final;
         };
     }

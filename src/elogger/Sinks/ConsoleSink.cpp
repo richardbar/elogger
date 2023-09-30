@@ -26,6 +26,10 @@
 
 #include <iostream>
 
+elogger::Sinks::ConsoleSink::ConsoleSink(const elogger::Sinks::Configuations::ConsoleSinkConfigurations& configuations) :
+    _configuration { configuations }
+{ }
+
 bool elogger::Sinks::ConsoleSink::Handle(const elogger::LogPacket& logPacket) const
 {
     std::cout << "[" << elogger::LogLevelToString(logPacket.GetLogLevel()) << "]: " <<
