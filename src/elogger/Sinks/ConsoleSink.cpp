@@ -36,6 +36,24 @@ static const std::__iom_t10<char> GetTime() noexcept
     return std::put_time(&localTime, "%FT%T%z ");
 }
 
+static constexpr const std::string GetColor(const elogger::LogLevel& logLevel) noexcept
+{
+    switch (logLevel)
+    {
+        case elogger::LogLevel::Verbose: return "\e[0;37m";
+        case elogger::LogLevel::Debug: return "\e[0;34m";
+        case elogger::LogLevel::Information: return "\e[0;32m";
+        case elogger::LogLevel::Warning: return "\e[0;33m";
+        case elogger::LogLevel::Error: return "\e[0;31m";
+        default: return "Unknown";
+    }
+}
+
+static constexpr const std::string GetColorReset() noexcept
+{
+    return "\e[0m";
+}
+
 elogger::Sinks::ConsoleSink::ConsoleSink(const elogger::Sinks::Configuations::ConsoleSinkConfigurations& configuations) :
     _configuration { configuations }
 { }
@@ -49,8 +67,18 @@ bool elogger::Sinks::ConsoleSink::Handle(const elogger::LogPacket& logPacket) co
     
     std::cout << "[";
     
+    if (this->_configuration.GetColor())
+    {
+        std::cout << GetColor(logPacket.GetLogLevel());
+    }
+
     std::cout << elogger::LogLevelToString(logPacket.GetLogLevel());
     
+    if (this->_configuration.GetColor())
+    {
+        std::cout << GetColorReset();
+    }
+
     std::cout << "]: " << logPacket.GetMessage() << std::endl;
 
     return true;
