@@ -87,6 +87,13 @@ namespace elogger
 
     namespace Sinks
     {
+        class ISink
+        {
+            private:
+
+            public:
+
+        };
     }
 }
 
