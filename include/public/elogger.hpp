@@ -92,6 +92,7 @@ namespace elogger
             private:
 
             public:
+                [[nodiscard]] virtual bool Handle(const elogger::LogPacket& logPacket) const = 0;
 
         };
     }
