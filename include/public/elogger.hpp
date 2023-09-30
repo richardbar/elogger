@@ -93,7 +93,14 @@ namespace elogger
 
             public:
                 [[nodiscard]] virtual bool Handle(const elogger::LogPacket& logPacket) const = 0;
+        };
 
+        class ConsoleSink : public elogger::Sinks::ISink
+        {
+            private:
+
+            public:
+                [[nodiscard]] bool Handle(const elogger::LogPacket& logPacket) const final;
         };
     }
 }
