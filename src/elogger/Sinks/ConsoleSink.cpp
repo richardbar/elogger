@@ -24,7 +24,17 @@
 
 #include "elogger.hpp"
 
+#include <ctime>
+#include <iomanip>
 #include <iostream>
+
+static const std::__iom_t10<char> GetTime() noexcept
+{
+    const auto& time = std::time(nullptr);
+    const auto& localTime = *std::localtime(&time);
+
+    return std::put_time(&localTime, "%FT%T%z ");
+}
 
 elogger::Sinks::ConsoleSink::ConsoleSink(const elogger::Sinks::Configuations::ConsoleSinkConfigurations& configuations) :
     _configuration { configuations }
@@ -32,8 +42,16 @@ elogger::Sinks::ConsoleSink::ConsoleSink(const elogger::Sinks::Configuations::Co
 
 bool elogger::Sinks::ConsoleSink::Handle(const elogger::LogPacket& logPacket) const
 {
-    std::cout << "[" << elogger::LogLevelToString(logPacket.GetLogLevel()) << "]: " <<
-        logPacket.GetMessage() << std::endl;
+    if (this->_configuration.GetIncludeTime())
+    {
+        std::cout << GetTime();
+    }
+    
+    std::cout << "[";
+    
+    std::cout << elogger::LogLevelToString(logPacket.GetLogLevel());
+    
+    std::cout << "]: " << logPacket.GetMessage() << std::endl;
 
     return true;
 }
