@@ -28,5 +28,8 @@
 
 bool elogger::Sinks::ConsoleSink::Handle(const elogger::LogPacket& logPacket) const
 {
+    std::cout << "[" << elogger::LogLevelToString(logPacket.GetLogLevel()) << "]: " <<
+        logPacket.GetMessage() << std::endl;
 
+    return true;
 }
