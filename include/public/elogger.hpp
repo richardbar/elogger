@@ -127,6 +127,11 @@ namespace elogger
             };
         }
 
+        namespace Utilities
+        {
+
+        }
+
         class ISink
         {
             private:
