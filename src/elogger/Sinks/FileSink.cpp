@@ -38,6 +38,21 @@ FileSink::FileSink(const Configuations::FileSinkConfiguration& configuations) :
 
 bool FileSink::Handle(const LogPacket& logPacket) const
 {
+    bool fileNotOpen = !this->_fileStream.is_open();
+    if (fileNotOpen)
+    {
+        return false;
+    }
+
+    if (this->_configuration.GetIncludeTime())
+    {
+        this->_fileStream << Utilities::GetDateTime(this->_configuration.GetTimeFormat()) << " ";
+    }
+    
+    this->_fileStream << "[" << elogger::LogLevelToString(logPacket.GetLogLevel()) <<
+        "]: " << logPacket.GetMessage() << std::endl;
+
+    return true;
 }
 
 FileSink::~FileSink()
