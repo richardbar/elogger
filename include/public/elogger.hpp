@@ -158,12 +158,15 @@ namespace elogger
         {
             private:
                 Configuations::FileSinkConfiguration _configuration;
+                mutable std::ofstream _fileStream;
 
             public:
                 FileSink() = delete;
                 explicit FileSink(const Configuations::FileSinkConfiguration& configuations);
 
                 [[nodiscard]] bool Handle(const LogPacket& logPacket) const final;
+
+                ~FileSink();
         };
     }
 }

@@ -33,8 +33,14 @@ using namespace elogger::Sinks;
 FileSink::FileSink(const Configuations::FileSinkConfiguration& configuations) :
     _configuration { configuations }
 {
+    this->_fileStream.open(this->_configuration.GetFileName(), std::ios::out | std::ios::app);
 }
 
 bool FileSink::Handle(const LogPacket& logPacket) const
 {
+}
+
+FileSink::~FileSink()
+{
+    this->_fileStream.close();
 }
