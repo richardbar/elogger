@@ -22,3 +22,4 @@
 
 set(ELOGGER_CXX_SRC "${CMAKE_CURRENT_LIST_DIR}/SinkConfiguration.cpp;${ELOGGER_CXX_SRC}")
 set(ELOGGER_CXX_SRC "${CMAKE_CURRENT_LIST_DIR}/ConsoleSinkConfigurations.cpp;${ELOGGER_CXX_SRC}")
+set(ELOGGER_CXX_SRC "${CMAKE_CURRENT_LIST_DIR}/FileSinkConfiguration.cpp;${ELOGGER_CXX_SRC}")

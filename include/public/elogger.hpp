@@ -113,6 +113,14 @@ namespace elogger
                     
                     [[nodiscard]] bool GetColor() const noexcept;
             };
+
+            class FileSinkConfiguration : public SinkConfiguration
+            {
+                private:
+
+                public:
+
+            };
         }
 
         class ISink
