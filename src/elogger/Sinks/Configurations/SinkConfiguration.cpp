@@ -31,7 +31,15 @@ elogger::Sinks::Configuations::SinkConfiguration& elogger::Sinks::Configuations:
     return *this;
 }
 
+elogger::Sinks::Configuations::SinkConfiguration& elogger::Sinks::Configuations::SinkConfiguration::SetTimeFormat(const std::string& format) noexcept
+{
+}
+
 bool elogger::Sinks::Configuations::SinkConfiguration::GetIncludeTime() const noexcept
 {
     return this->_includeTime;
+}
+
+const std::string elogger::Sinks::Configuations::SinkConfiguration::GetTimeFormat() const noexcept
+{
 }

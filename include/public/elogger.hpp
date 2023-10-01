@@ -93,11 +93,14 @@ namespace elogger
             {
                 private:
                     bool _includeTime = true;
+                    std::string _timeFormat = "%FT%T%z";
 
                 public:
                     SinkConfiguration& SetIncludeTime(bool value) noexcept;
+                    SinkConfiguration& SetTimeFormat(const std::string& format) noexcept;
 
                     [[nodiscard]] bool GetIncludeTime() const noexcept;
+                    [[nodiscard]] const std::string GetTimeFormat() const noexcept;
             };
 
             class ConsoleSinkConfiguration  : public SinkConfiguration
