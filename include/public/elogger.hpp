@@ -89,7 +89,15 @@ namespace elogger
     {
         namespace Configuations
         {
-            class ConsoleSinkConfigurations
+            class SinkConfiguration
+            {
+                private:
+
+                public:
+
+            };
+
+            class ConsoleSinkConfigurations  : public SinkConfiguration
             {
                 private:
                     bool _color = false;
