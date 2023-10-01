@@ -24,3 +24,4 @@ include("${CMAKE_CURRENT_LIST_DIR}/Configurations/CMakeLists.txt")
 include("${CMAKE_CURRENT_LIST_DIR}/Utilities/CMakeLists.txt")
 
 set(ELOGGER_CXX_SRC "${CMAKE_CURRENT_LIST_DIR}/ConsoleSink.cpp;${ELOGGER_CXX_SRC}")
+set(ELOGGER_CXX_SRC "${CMAKE_CURRENT_LIST_DIR}/FileSink.cpp;${ELOGGER_CXX_SRC}")

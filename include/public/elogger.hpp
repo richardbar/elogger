@@ -151,6 +151,18 @@ namespace elogger
 
                 [[nodiscard]] bool Handle(const elogger::LogPacket& logPacket) const final;
         };
+
+        class FileSink : public elogger::Sinks::ISink
+        {
+            private:
+                Configuations::FileSinkConfiguration _configuration;
+
+            public:
+                FileSink() = delete;
+                explicit FileSink(const Configuations::FileSinkConfiguration& configuations);
+
+                [[nodiscard]] bool Handle(const LogPacket& logPacket) const final;
+        };
     }
 }
 
