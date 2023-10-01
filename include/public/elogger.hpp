@@ -117,9 +117,13 @@ namespace elogger
             class FileSinkConfiguration : public SinkConfiguration
             {
                 private:
+                    const std::string _fileName;
 
                 public:
+                    FileSinkConfiguration() = delete;
+                    FileSinkConfiguration(const std::string& fileName);
 
+                    [[nodiscard]] const std::string& GetFileName() const noexcept;
             };
         }
 

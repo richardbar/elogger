@@ -23,3 +23,14 @@
  */
 
 #include "elogger.hpp"
+
+using namespace elogger::Sinks::Configuations;
+
+FileSinkConfiguration::FileSinkConfiguration(const std::string& fileName) :
+    _fileName { fileName }
+{ }
+
+const std::string& FileSinkConfiguration::GetFileName() const noexcept
+{
+    return this->_fileName;
+}
