@@ -23,3 +23,15 @@
  */
 
 #include "elogger.hpp"
+
+elogger::Sinks::Configuations::SinkConfiguration& elogger::Sinks::Configuations::SinkConfiguration::SetIncludeTime(bool value) noexcept
+{
+    this->_includeTime = value;
+
+    return *this;
+}
+
+bool elogger::Sinks::Configuations::SinkConfiguration::GetIncludeTime() const noexcept
+{
+    return this->_includeTime;
+}

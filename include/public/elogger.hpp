@@ -92,23 +92,23 @@ namespace elogger
             class SinkConfiguration
             {
                 private:
+                    bool _includeTime = true;
 
                 public:
+                    SinkConfiguration& SetIncludeTime(bool value) noexcept;
 
+                    [[nodiscard]] bool GetIncludeTime() const noexcept;
             };
 
             class ConsoleSinkConfigurations  : public SinkConfiguration
             {
                 private:
                     bool _color = false;
-                    bool _includeTime = false;
 
                 public:
                     ConsoleSinkConfigurations& SetColour(bool value) noexcept;
-                    ConsoleSinkConfigurations& SetIncludeTime(bool value) noexcept;
-
+                    
                     [[nodiscard]] bool GetColor() const noexcept;
-                    [[nodiscard]] bool GetIncludeTime() const noexcept;
             };
         }
 
