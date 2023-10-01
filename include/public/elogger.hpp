@@ -129,7 +129,7 @@ namespace elogger
 
         namespace Utilities
         {
-
+            const std::string GetDateTime(const std::string& format);
         }
 
         class ISink
