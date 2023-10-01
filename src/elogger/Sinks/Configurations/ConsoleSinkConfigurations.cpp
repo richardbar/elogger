@@ -24,7 +24,7 @@
 
 #include "elogger.hpp"
 
-elogger::Sinks::Configuations::ConsoleSinkConfiguration& elogger::Sinks::Configuations::ConsoleSinkConfiguration::SetColour(bool value) noexcept
+elogger::Sinks::Configuations::ConsoleSinkConfiguration& elogger::Sinks::Configuations::ConsoleSinkConfiguration::SetColor(bool value) noexcept
 {
     this->_color = value;
 

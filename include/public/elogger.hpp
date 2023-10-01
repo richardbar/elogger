@@ -106,7 +106,7 @@ namespace elogger
                     bool _color = false;
 
                 public:
-                    ConsoleSinkConfiguration& SetColour(bool value) noexcept;
+                    ConsoleSinkConfiguration& SetColor(bool value) noexcept;
                     
                     [[nodiscard]] bool GetColor() const noexcept;
             };
