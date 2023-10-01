@@ -28,12 +28,12 @@
 #include <iomanip>
 #include <iostream>
 
-static const std::__iom_t10<char> GetTime() noexcept
+static const std::__iom_t10<char> GetTime(const std::string& format) noexcept
 {
     const auto& time = std::time(nullptr);
     const auto& localTime = *std::localtime(&time);
 
-    return std::put_time(&localTime, "%FT%T%z ");
+    return std::put_time(&localTime, format.c_str());
 }
 
 static constexpr const std::string GetColor(const elogger::LogLevel& logLevel) noexcept
@@ -62,7 +62,7 @@ bool elogger::Sinks::ConsoleSink::Handle(const elogger::LogPacket& logPacket) co
 {
     if (this->_configuration.GetIncludeTime())
     {
-        std::cout << GetTime();
+        std::cout << GetTime(this->_configuration.GetTimeFormat()) << " ";
     }
     
     std::cout << "[";
