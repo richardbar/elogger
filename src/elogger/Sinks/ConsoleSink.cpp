@@ -54,7 +54,7 @@ static constexpr const std::string GetColorReset() noexcept
     return "\e[0m";
 }
 
-elogger::Sinks::ConsoleSink::ConsoleSink(const elogger::Sinks::Configuations::ConsoleSinkConfigurations& configuations) :
+elogger::Sinks::ConsoleSink::ConsoleSink(const elogger::Sinks::Configuations::ConsoleSinkConfiguration& configuations) :
     _configuration { configuations }
 { }
 

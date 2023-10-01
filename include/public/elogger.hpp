@@ -100,13 +100,13 @@ namespace elogger
                     [[nodiscard]] bool GetIncludeTime() const noexcept;
             };
 
-            class ConsoleSinkConfigurations  : public SinkConfiguration
+            class ConsoleSinkConfiguration  : public SinkConfiguration
             {
                 private:
                     bool _color = false;
 
                 public:
-                    ConsoleSinkConfigurations& SetColour(bool value) noexcept;
+                    ConsoleSinkConfiguration& SetColour(bool value) noexcept;
                     
                     [[nodiscard]] bool GetColor() const noexcept;
             };
@@ -123,11 +123,11 @@ namespace elogger
         class ConsoleSink : public elogger::Sinks::ISink
         {
             private:
-                elogger::Sinks::Configuations::ConsoleSinkConfigurations _configuration;
+                elogger::Sinks::Configuations::ConsoleSinkConfiguration _configuration;
 
             public:
                 ConsoleSink() = default;
-                explicit ConsoleSink(const elogger::Sinks::Configuations::ConsoleSinkConfigurations& configuations);
+                explicit ConsoleSink(const elogger::Sinks::Configuations::ConsoleSinkConfiguration& configuations);
 
                 [[nodiscard]] bool Handle(const elogger::LogPacket& logPacket) const final;
         };
